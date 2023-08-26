@@ -1,0 +1,25 @@
+function solucao(notas) {
+   let countI = 0;
+    let hasD = false;
+
+    for (const nota of notas) {
+        if (nota < 5) {
+            hasD = true;
+            break;
+        } else if (nota < 6.5) {
+            countI++;
+        }
+    }
+
+    if (countI >= 2 || hasD) {
+        console.log ("DESLIGAR ALUNO");
+    } else {
+        console.log ("SITUACAO REGULAR");
+    }
+  
+}
+
+function processData(input) {
+    const notas = input.trim().split(" ").map(x => Number(x));
+  	solucao(notas);
+} 
